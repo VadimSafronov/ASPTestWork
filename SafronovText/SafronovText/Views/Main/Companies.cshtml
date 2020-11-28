@@ -1,0 +1,41 @@
+﻿@model SafronovText.Models.CompanyModel
+@{
+    ViewBag.Title = "Представление для компаний";
+}
+<h2>
+    Таблица компаний
+</h2>
+<table style="width: 670px;">
+    <tr>
+        <td>
+            ID
+        </td>
+        <td>
+            Название
+        </td>
+        <td>
+            Организационно-правовая форма
+        </td>
+        <td></td>
+    </tr>
+    @foreach (SafronovText.Models.CompanyModel item in ViewBag.Companies)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.CompanyID.ToString(), "EditCompany", new { id = item.CompanyID })
+            </td>
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.CompType
+            </td>
+            
+             <td>
+             @Html.ActionLink("Удалить", "DeleteCompany", new { id = item.CompanyID })
+             </td>
+        </tr>
+      }
+</table>
+</br>
+@Html.ActionLink("Добавить компанию", "AddCompany"); 

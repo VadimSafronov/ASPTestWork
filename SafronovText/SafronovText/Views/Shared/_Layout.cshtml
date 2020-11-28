@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                <h1>
+                    <a href="#">Safronov Vadim</a>
+                </h1>
+                <p>
+                    web site for <a href="http://www.qulix.com">Qulix Systems</a>
+                </p>
+            </div>
+        </div>
+        <!-- end #header -->
+        <div id="menu">
+            <ul>
+                <li>@Html.ActionLink("Список компаний", "Companies")</li>
+                <li>@Html.ActionLink("Список работников", "Index")</li>
+            </ul>
+        </div>
+        <!-- end #menu -->
+        <div id="page">
+            <div id="page-bgtop">
+                <div id="page-bgbtm">
+                    <div id="content">
+                        @RenderBody()
+                    </div>
+                    <!-- end #content -->
+                    <div style="clear: both;">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end #page -->
+        <div id="footer">
+            <p>
+                Copyright (c) 2020 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">
+                    CSS Templates
+                </a>.
+            </p>
+        </div>
+        <!-- end #footer -->
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

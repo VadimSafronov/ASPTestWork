@@ -1,0 +1,63 @@
+﻿@model SafronovText.Models.PersonModel 
+@{
+    ViewBag.Title = "Представление для работника";
+}
+<h2>
+    Таблица работников
+</h2>
+<table style="width:670px;">
+    <tr>
+        <td>
+            ID
+        </td>
+        <td>
+            Имя
+        </td>
+        <td>
+            Фамилия
+        </td>
+        <td>
+            Отчество
+        </td>
+        <td>
+            Должность
+        </td>
+        <td>
+            Компания
+        </td>
+        <td>
+            Дата
+        </td>
+        <td></td>
+    </tr>
+    @foreach (SafronovText.Models.PersonModel item in ViewBag.Items)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.PersonID.ToString(), "EditPerson", new { id = item.PersonID })
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Surname
+            </td>
+            <td>
+                @item.Patronymic
+            </td>
+            <td>
+                @item.Position.Position
+            </td>
+            <td>
+                @item.Company.Title
+            </td>
+            <td>
+                @item.StartDate.ToShortDateString()
+            </td>
+
+            <td> @Html.ActionLink("Удалить", "DeletePerson", new { id = item.PersonID })</td>
+        </tr>
+    }
+</table>
+</br>
+@Html.ActionLink("Добавить работника", "AddPerson");

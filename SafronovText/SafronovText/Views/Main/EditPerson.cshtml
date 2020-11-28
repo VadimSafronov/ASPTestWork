@@ -1,0 +1,80 @@
+﻿@model SafronovText.Models.PersonModel
+
+@{
+    ViewBag.Title = "Редактировать работника";
+}
+
+<h2>Редактировать исполнителя</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<fieldset>
+    <legend>Редактировать работника</legend>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.PersonID)
+    </div>
+    <div class="editor-field">
+        <textarea readonly="readonly" style="height:15px;width:152px;">@ViewData.Model.PersonID.ToString()</textarea>
+        <div style="display:none">
+            @Html.EditorFor(model => model.PersonID)
+            @Html.ValidationMessageFor(model => model.PersonID)
+        </div>
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Surname)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Surname)
+        @Html.ValidationMessageFor(model => model.Surname)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Patronymic)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Patronymic)
+        @Html.ValidationMessageFor(model => model.Patronymic)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.StartDate)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.StartDate)
+        @Html.ValidationMessageFor(model => model.StartDate)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Position)
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(model => model.Position.PositionID, new SelectList(ViewBag.Positions, "Value", "Text"));
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Company)
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(model => model.Company.CompanyID, new SelectList(ViewBag.Companies, "Value", "Text"));
+    </div>
+
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+</fieldset>
+}
+
+<div>
+    @Html.ActionLink("Отмена", "Index")
+</div>
