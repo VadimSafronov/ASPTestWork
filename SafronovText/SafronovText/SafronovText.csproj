@@ -15,6 +15,9 @@
     <RootNamespace>SafronovText</RootNamespace>
     <AssemblyName>SafronovText</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <DevelopmentServerPort>54776</DevelopmentServerPort>
+    <DevelopmentServerVPath>/</DevelopmentServerVPath>
+    <IISUrl>http://localhost:54776/</IISUrl>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -204,9 +207,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54776</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54776/</IISUrl>
+          <IISUrl>http://localhost:57599/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

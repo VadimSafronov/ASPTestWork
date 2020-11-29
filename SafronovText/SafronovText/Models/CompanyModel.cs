@@ -14,7 +14,9 @@ namespace SafronovText.Models
         public string Title { get; set; }
         [DisplayName("Организационно-правовая форма")]
         public string CompType {get; set; }
+        [DisplayName("Размер компании")]
+        public int Workers { get; set; }
 
-
+       
     }
 }

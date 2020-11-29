@@ -80,6 +80,7 @@ C:\Users\Admin\source\repos\SafronovText\SafronovText\obj\Debug\SafronovText.csp
 C:\Users\Admin\source\repos\SafronovText\SafronovText\obj\Debug\SafronovText.csproj.CopyComplete
 C:\Users\Admin\source\repos\SafronovText\SafronovText\obj\Debug\SafronovText.dll
 C:\Users\Admin\source\repos\SafronovText\SafronovText\obj\Debug\SafronovText.pdb
+C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\obj\Debug\SafronovText.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\bin\SafronovText.dll.config
 C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\bin\SafronovText.dll
 C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\bin\SafronovText.pdb
@@ -158,8 +159,7 @@ C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\bin\ru\System.Web.Raz
 C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\bin\ru\System.Web.WebPages.resources.dll
 C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\bin\ru\System.Web.WebPages.Razor.resources.dll
-C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\obj\Debug\SafronovText.csprojAssemblyReference.cache
-C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\obj\Debug\SafronovText.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\obj\Debug\SafronovText.csproj.CopyComplete
 C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\obj\Debug\SafronovText.dll
 C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\obj\Debug\SafronovText.pdb
+C:\Users\Admin\Desktop\QulixTest\SafronovText\SafronovText\obj\Debug\SafronovText.csprojAssemblyReference.cache

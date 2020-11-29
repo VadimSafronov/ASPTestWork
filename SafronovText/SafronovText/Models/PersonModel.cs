@@ -29,5 +29,5 @@ namespace SafronovText.Models
             [DisplayName("Компания")]
             public CompanyModel Company { get; set; }
 
-        }
+    }
 }

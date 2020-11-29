@@ -34,6 +34,8 @@ namespace SafronovText.Controllers
         #region методы
         //Методы для выбора элементов по ID
 
+        
+
         //Выбор компании по ID
         public CompanyModel SelectCompany(int id)
         {
@@ -46,6 +48,7 @@ namespace SafronovText.Controllers
                     result.CompanyID = id;
                     result.Title = p.Field<string>("Title");
                     result.CompType = p.Field<string>("CompType");
+                    
 
                 }
 
@@ -54,6 +57,7 @@ namespace SafronovText.Controllers
             return result;
 
         }
+ 
         //Выбор должности по ID
         public PositionModel SelectPosition(int id)
         {
@@ -93,25 +97,60 @@ namespace SafronovText.Controllers
             return result;
 
         }
+
         //Выбор всех компаний 
         public List<CompanyModel> SelectAllCompanies()
         {
-            List<CompanyModel> result = new List<CompanyModel>();
-            foreach(var p in DataModel.Tables[1].AsEnumerable())
-            {
-                result.Add(new CompanyModel
+            
+                List<CompanyModel> result = new List<CompanyModel>();
+                foreach (var p in DataModel.Tables[1].AsEnumerable())
                 {
-                    CompanyID = p.Field<int>("CompanyID"),
-                    Title = p.Field<string>("Title"),
-                    CompType = p.Field<string>("CompType")
-                });
+                    result.Add(new CompanyModel
+                    {
+                        CompanyID = p.Field<int>("CompanyID"),
+                        Title = p.Field<string>("Title"),
+                        CompType = p.Field<string>("CompType"),
+                        Workers = p.Field<int>("Workers")
 
-            }
-            return result;
+
+
+                    });
+
+                }
+                return result;
+            
         }
+
+        
+
         //Выбор всех работников
         public List<PersonModel> SelectAllPeople()
         {
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SafronovTestString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con; // передать команде соединение, которое уже содержит connectionstring
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "pr_SelectAllCompanies";
+
+                    con.Open();
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    //catch (Exception E)
+                    //{
+                    //    //Response.Write(E.Message);
+                    //}
+                    finally
+                    {
+                        cmd.Connection.Close();
+                    }
+                }
+            }
             List<PersonModel> result = new List<PersonModel>();
             foreach(var p in DataModel.Tables[0].AsEnumerable())
             {
@@ -121,14 +160,17 @@ namespace SafronovText.Controllers
                     Patronymic = p.Field<string>("Patronymic"),
                     Position = SelectPosition(p.Field<int>("Position")),
                     Company = SelectCompany(p.Field<int>("Company")),
-                    StartDate = p.Field<DateTime>("StartDate")
+                    StartDate = p.Field<DateTime>("StartDate"),
+                    
 
-            });
+
+                });
 
             }
             return result;
 
         }
+
         //Выбор всех должностей в DropDownList
         public List<SelectListItem> DropDownPositions()
         {
@@ -192,6 +234,7 @@ namespace SafronovText.Controllers
             }
 
         }
+        
 
         //Добавить компанию
 
@@ -206,6 +249,7 @@ namespace SafronovText.Controllers
                     cmd.CommandText = "pr_AddCompany";
                     cmd.Parameters.AddWithValue("@title", obj.Title);
                     cmd.Parameters.AddWithValue("@comptype", obj.CompType);
+                    cmd.Parameters.AddWithValue("@workers", 0);
 
                     con.Open();
 
@@ -337,6 +381,7 @@ namespace SafronovText.Controllers
                     cmd.Parameters.AddWithValue("@id", obj.CompanyID);
                     cmd.Parameters.AddWithValue("@title", obj.Title);
                     cmd.Parameters.AddWithValue("@comptype", obj.CompType);
+                    
 
                     con.Open();
 
@@ -359,6 +404,8 @@ namespace SafronovText.Controllers
             }
 
            }
+      
+
 
         #endregion
 

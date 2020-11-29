@@ -18,11 +18,16 @@ namespace SafronovText.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Companies()
         { // Вывод всех компаний
-            DataAccessModel model = new DataAccessModel();
-            ViewBag.Companies = model.SelectAllCompanies();
-            return View();
+            
+                DataAccessModel model = new DataAccessModel();
+                ViewBag.Companies = model.SelectAllCompanies();
+           
+                return View();
+
+
         }
 
         #region редактирование 

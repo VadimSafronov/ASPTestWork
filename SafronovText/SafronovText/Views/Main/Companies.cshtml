@@ -16,25 +16,32 @@
         <td>
             Организационно-правовая форма
         </td>
+        <td>
+            Количество работников
+        </td>
         <td></td>
     </tr>
     @foreach (SafronovText.Models.CompanyModel item in ViewBag.Companies)
     {
-        <tr>
-            <td>
-                @Html.ActionLink(item.CompanyID.ToString(), "EditCompany", new { id = item.CompanyID })
-            </td>
-            <td>
-                @item.Title
-            </td>
-            <td>
-                @item.CompType
-            </td>
-            
-             <td>
-             @Html.ActionLink("Удалить", "DeleteCompany", new { id = item.CompanyID })
-             </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.ActionLink(item.CompanyID.ToString(), "EditCompany", new { id = item.CompanyID })
+        </td>
+        <td>
+            @item.Title
+        </td>
+        <td>
+            @item.CompType
+        </td>
+        <td>
+            @item.Workers
+        </td>
+
+
+        <td>
+            @Html.ActionLink("Удалить", "DeleteCompany", new { id = item.CompanyID })
+        </td>
+    </tr>
       }
 </table>
 </br>
